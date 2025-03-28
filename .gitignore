@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*2.html
+*2.css
+*2.json
+*.log
+.vscode/

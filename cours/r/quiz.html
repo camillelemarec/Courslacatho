@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - R</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- Code Google AdSense à ajouter ici quand disponible -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-VOTRE-ID-CLIENT" crossorigin="anonymous"></script>
+    <script src="../../js/ads.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-link">Menu principal</a>
+            <a href="../../autres-annees.html" class="nav-link">Changer d'année de licence</a>
+        </div>
+    </nav>
+    
+    <!-- Publicité colonne gauche -->
+    <div class="ad-container ad-left">
+        <div class="ad-unit">
+            <div class="ad-label">Publicité</div>
+            <!-- Code Google Ads à insérer ici -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-VOTRE-ID-CLIENT"
+                 data-ad-slot="VOTRE-ID-EMPLACEMENT-GAUCHE"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <!-- Publicité colonne droite -->
+    <div class="ad-container ad-right">
+        <div class="ad-unit">
+            <div class="ad-label">Publicité</div>
+            <!-- Code Google Ads à insérer ici -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-VOTRE-ID-CLIENT"
+                 data-ad-slot="VOTRE-ID-EMPLACEMENT-DROITE"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h1>Quiz - R</h1>
+        <div class="progress-bar">
+            <div class="progress" style="width: 0%"></div>
+        </div>
+        <div id="score" style="text-align: right; margin-bottom: 1rem;">Score: <span>0</span>/17</div>
+        <div id="quiz"></div>
+        <div class="navigation">
+            <button onclick="window.location.href='index.html'" class="course-button">
+                Retour au menu
+            </button>
+        </div>
+    </div>
+
+    <script src="../../js/quiz-r.js"></script>
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const quizContainer = document.getElementById('quiz');
+        const scoreElement = document.querySelector('#score span');
+
+        function showQuestion(index) {
+            const question = questions[index];
+            const questionHTML = `
+                <div class="question">
+                    <h3>${index + 1}. ${question.question}</h3>
+                    <div class="options">
+                        ${question.options.map((option, i) => `
+                            <div class="option" onclick="checkAnswer(${i})">${option}</div>
+                        `).join('')}
+                    </div>
+                    <div class="explanation">${question.explanation}</div>
+                    <div class="next-button" style="display: none;">
+                        <button onclick="nextQuestion()" class="course-button">Question suivante</button>
+                    </div>
+                </div>
+            `;
+            quizContainer.innerHTML = questionHTML;
+            updateProgress();
+        }
+
+        function checkAnswer(selectedIndex) {
+            const question = questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+            const explanation = document.querySelector('.explanation');
+            const nextButton = document.querySelector('.next-button');
+            
+            options.forEach(option => option.style.pointerEvents = 'none');
+            
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                score++;
+                scoreElement.textContent = score;
+            } else {
+                options[selectedIndex].classList.add('incorrect');
+                options[question.correct].classList.add('correct');
+            }
+            
+            explanation.classList.add('show');
+            nextButton.style.display = 'block';
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                showFinalScore();
+            }
+        }
+
+        function showFinalScore() {
+            const percentage = (score / questions.length) * 100;
+            quizContainer.innerHTML = `
+                <div class="question">
+                    <h3>Quiz terminé !</h3>
+                    <p>Votre score final : ${score}/${questions.length} (${percentage}%)</p>
+                    <button onclick="restartQuiz()" class="course-button">Recommencer le quiz</button>
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            scoreElement.textContent = '0';
+            showQuestion(0);
+        }
+
+        function updateProgress() {
+            const progress = document.querySelector('.progress');
+            const percentage = ((currentQuestion + 1) / questions.length) * 100;
+            progress.style.width = `${percentage}%`;
+        }
+
+        // Démarrer le quiz
+        showQuestion(0);
+    </script>
+</body>
+</html> 

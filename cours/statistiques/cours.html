@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours - Statistiques</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- Code Google AdSense à ajouter ici quand disponible -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-VOTRE-ID-CLIENT" crossorigin="anonymous"></script>
+    <script src="../../js/ads.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-link">Menu principal</a>
+            <a href="../../autres-annees.html" class="nav-link">Changer d'année de licence</a>
+        </div>
+    </nav>
+    
+    <!-- Publicité colonne gauche -->
+    <div class="ad-container ad-left">
+        <div class="ad-unit">
+            <div class="ad-label">Publicité</div>
+            <!-- Code Google Ads à insérer ici -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-VOTRE-ID-CLIENT"
+                 data-ad-slot="VOTRE-ID-EMPLACEMENT-GAUCHE"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <!-- Publicité colonne droite -->
+    <div class="ad-container ad-right">
+        <div class="ad-unit">
+            <div class="ad-label">Publicité</div>
+            <!-- Code Google Ads à insérer ici -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-VOTRE-ID-CLIENT"
+                 data-ad-slot="VOTRE-ID-EMPLACEMENT-DROITE"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h1>Statistiques - Support de cours</h1>
+        <div class="course-content">
+            <h2>Statistiques</h2>
+            <div class="course-content">
+                <h3>1. Statistiques descriptives</h3>
+                <h4>Indicateurs de position</h4>
+                <div class="code-example">
+                    <pre><code>Moyenne (μ) = ∑x/n
+Médiane = valeur qui sépare la série en deux parties égales
+Mode = valeur la plus fréquente
+Quartiles = Q1 (25%), Q2 (50% = médiane), Q3 (75%)</code></pre>
+                </div>
+
+                <h4>Indicateurs de dispersion</h4>
+                <div class="code-example">
+                    <pre><code>Variance (σ²) = ∑(x-μ)²/n
+Écart-type (σ) = √(variance)
+Étendue = valeur max - valeur min
+Écart interquartile = Q3 - Q1</code></pre>
+                </div>
+
+                <h3>2. Distributions statistiques</h3>
+                <h4>Distribution normale</h4>
+                <p>Caractéristiques :</p>
+                <ul>
+                    <li>Forme en cloche symétrique</li>
+                    <li>Moyenne = médiane = mode</li>
+                    <li>68% des données entre μ±σ</li>
+                    <li>95% des données entre μ±2σ</li>
+                    <li>99.7% des données entre μ±3σ</li>
+                </ul>
+
+                <h3>3. Probabilités</h3>
+                <h4>Concepts de base</h4>
+                <ul>
+                    <li>P(A) = probabilité de l'événement A</li>
+                    <li>0 ≤ P(A) ≤ 1</li>
+                    <li>P(A∪B) = P(A) + P(B) - P(A∩B)</li>
+                    <li>P(A|B) = P(A∩B)/P(B)</li>
+                </ul>
+
+                <h4>Variables aléatoires</h4>
+                <div class="code-example">
+                    <pre><code>Espérance (E(X)) = moyenne théorique
+Variance (V(X)) = E((X-E(X))²)
+Écart-type = √V(X)</code></pre>
+                </div>
+
+                <h3>4. Échantillonnage</h3>
+                <h4>Théorème central limite</h4>
+                <p>La distribution des moyennes d'échantillons tend vers une loi normale quand n augmente.</p>
+                <div class="code-example">
+                    <pre><code>Erreur-type = σ/√n
+Intervalle de confiance à 95% = x̄ ± 1.96×(σ/√n)</code></pre>
+                </div>
+
+                <h3>5. Tests statistiques</h3>
+                <h4>Test de Student (t-test)</h4>
+                <p>Compare la moyenne d'un échantillon à une valeur théorique ou deux moyennes entre elles.</p>
+                <ul>
+                    <li>H0 : hypothèse nulle</li>
+                    <li>H1 : hypothèse alternative</li>
+                    <li>p-value : probabilité d'obtenir un résultat au moins aussi extrême</li>
+                </ul>
+
+                <h4>Test du Chi-deux</h4>
+                <p>Teste l'indépendance entre deux variables qualitatives.</p>
+                <div class="code-example">
+                    <pre><code>χ² = ∑((O-E)²/E)
+O = effectifs observés
+E = effectifs théoriques</code></pre>
+                </div>
+
+                <h3>6. Corrélation et régression</h3>
+                <h4>Coefficient de corrélation (r)</h4>
+                <div class="code-example">
+                    <pre><code>r = Cov(X,Y)/(σx×σy)
+-1 ≤ r ≤ 1
+r = 1 : corrélation positive parfaite
+r = -1 : corrélation négative parfaite
+r = 0 : absence de corrélation linéaire</code></pre>
+                </div>
+
+                <h4>Régression linéaire</h4>
+                <div class="code-example">
+                    <pre><code>y = ax + b
+a = Cov(X,Y)/V(X)
+b = ȳ - ax̄
+R² = coefficient de détermination</code></pre>
+                </div>
+
+                <div class="navigation">
+                    <button onclick="window.location.href='index.html'" class="course-button">
+                        Retour au menu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,11 @@
+{
+  "name": "cours-l2-eco-fi",
+  "version": "1.0.0",
+  "description": "Site de cours L2 Éco-Fi",
+  "scripts": {
+    "dev": "live-server --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 
