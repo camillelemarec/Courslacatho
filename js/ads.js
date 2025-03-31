@@ -3,13 +3,11 @@
  * À personnaliser avec votre ID Google AdSense
  */
 
-// Fonction pour vérifier si l'utilisateur est sur mobile
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
 // Fonction pour charger les publicités
 function loadAds() {
+    // Laisser les publicités toujours visibles
+    // Si on veut réactiver les conditions, décommenter le code ci-dessous
+    /*
     // Ne pas charger les publicités sur la page d'accueil
     if (window.location.pathname === '/' || 
         window.location.pathname === '/index.html' ||
@@ -19,9 +17,10 @@ function loadAds() {
     }
     
     // Si l'écran est trop petit, masquer les publicités latérales
-    if (isMobile()) {
+    if (window.innerWidth <= 768) {
         hideAllAds();
     }
+    */
 }
 
 // Fonction pour masquer toutes les publicités

@@ -178,12 +178,13 @@ h4 {
     margin-bottom: 5px;
 }
 
-/* Media query pour masquer les publicités sur les petits écrans */
+/* Media query pour masquer les publicités sur les petits écrans - désactivé pour toujours afficher les publicités
 @media (max-width: 1300px) {
     .ad-container {
         display: none;
     }
 }
+*/
 
 .course-content {
     line-height: 1.8;
