@@ -3,11 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours - R</title>
+    <title>Cours - R et RStudio (Fiche de révision complète pour réussir l'examen)</title>
     <link rel="stylesheet" href="../../styles.css">
     <!-- Code Google AdSense à ajouter ici quand disponible -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3363694879891746" crossorigin="anonymous"></script>
     <script src="../../js/ads.js"></script>
+    <style>
+        .exam-tip {
+            background-color: #ffeeba;
+            border-left: 5px solid #ffc107;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .must-know {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .practice-example {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .code-example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .code-example pre {
+            margin: 0;
+        }
+        
+        .section-header {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .important-note {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .qcm-example {
+            background-color: #e0f7fa;
+            border-left: 5px solid #00bcd4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .error-spot {
+            background-color: #ffebee;
+            border: 1px dashed #f44336;
+            padding: 2px 5px;
+            font-family: monospace;
+        }
+        
+        .exam-format {
+            background-color: #ede7f6;
+            border-left: 5px solid #673ab7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -53,430 +125,639 @@
     </div>
     
     <div class="content">
-        <h1>R - Support de cours</h1>
+        <h1>R et RStudio - Fiche de révision complète pour l'examen</h1>
+        
+        <div class="exam-format">
+            <h3>📝 Format de l'examen</h3>
+            <ul>
+                <li><strong>Type d'examen :</strong> QCM</li>
+                <li><strong>Durée :</strong> 30 minutes</li>
+                <li><strong>Nombre de questions :</strong> Entre 15 et 20</li>
+                <li><strong>Format des réponses :</strong> 4 propositions par question, 1 seule réponse juste</li>
+                <li><strong>Notation :</strong> Points négatifs (-0,5) si réponse fausse (évitez les réponses au hasard)</li>
+                <li><strong>Programme :</strong> Jusqu'à la page 47 incluse du manuel d'utilisation et jusqu'à l'exercice 8 inclus du recueil d'exercices</li>
+            </ul>
+            
+            <h4>Types de questions à préparer :</h4>
+            <ol>
+                <li>Identifier une erreur dans une ligne de code</li>
+                <li>Trouver le code correct pour effectuer un traitement statistique demandé</li>
+                <li>Analyser des captures d'écran de l'interface RStudio</li>
+            </ol>
+        </div>
+        
+        <div class="must-know">
+            <h3>⚠️ Comment utiliser cette fiche</h3>
+            <p>Ce cours a été organisé pour maximiser vos chances de réussite à l'examen. Les sections marquées par 🧠 sont <strong>INDISPENSABLES</strong> à connaître (probabilité élevée de questions).</p>
+            <p>Pour préparer spécifiquement le QCM :</p>
+            <ul>
+                <li>Entraînez-vous à <strong>repérer des erreurs</strong> dans le code (syntaxe, parenthèses, virgules)</li>
+                <li>Mémorisez la <strong>syntaxe exacte</strong> des commandes principales</li>
+                <li>Pratiquez les exercices typiques avec <strong>plusieurs méthodes</strong> de résolution</li>
+            </ul>
+        </div>
+        
         <div class="course-content">
-            <h2>R</h2>
-            <div class="course-content">
-                <h3>1. L'interface de R et son organisation</h3>
-                <h4>Principales zones de l'interface</h4>
-                <ul>
-                    <li><strong>Console :</strong> Zone où les commandes sont exécutées.</li>
-                    <li><strong>Script :</strong> Espace pour écrire et enregistrer du code.</li>
-                    <li><strong>Environnement :</strong> Affiche les objets créés (variables, data frames, etc.).</li>
-                    <li><strong>Zone des graphiques :</strong> Affiche les visualisations générées.</li>
-                    <li><strong>Historique :</strong> Mémorise les commandes précédemment exécutées (onglet disponible dans le quadrant supérieur droit).</li>
-                    <li><strong>Packages :</strong> Permet d'installer et de charger des extensions (onglet dans le quadrant inférieur droit).</li>
-                </ul>
+            <div class="section-header">
+                <h2>🧠 1. Structure de l'interface RStudio (INDISPENSABLE)</h2>
+            </div>
+            
+            <p>RStudio est divisé en 4 zones principales :</p>
+            
+            <ul>
+                <li><strong>Zone 1 (haut gauche) :</strong> Éditeur de code (texte, scripts) - C'est ici que vous écrivez et modifiez vos scripts R</li>
+                <li><strong>Zone 2 (bas gauche) :</strong> Console (exécution du code) - Les commandes sont exécutées ici et les résultats s'y affichent</li>
+                <li><strong>Zone 3 (haut droit) :</strong> Environnement (objets en mémoire) - Liste tous les objets créés dans la session</li>
+                <li><strong>Zone 4 (bas droit) :</strong> Zone multiple avec onglets pour :
+                    <ul>
+                        <li>Files : explorateur de fichiers</li>
+                        <li>Plots : visualisation des graphiques</li>
+                        <li>Packages : gestion des packages</li>
+                        <li>Help : documentation et aide</li>
+                        <li>Viewer : visualisation de contenus web</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="exam-tip">
+                <p><strong>🎯 Conseil pour l'examen :</strong> Mémorisez bien l'emplacement et le rôle de chaque zone - c'est souvent demandé aux examens.</p>
+            </div>
+            
+            <div class="qcm-example">
+                <h4>💡 Exemples de questions de QCM sur l'interface</h4>
+                
+                <p><strong>Question type 1 :</strong> Quelle zone de RStudio permet d'installer de nouveaux packages ?</p>
+                <ol type="a">
+                    <li>Zone 1 (haut gauche)</li>
+                    <li>Zone 2 (bas gauche)</li>
+                    <li>Zone 3 (haut droit)</li>
+                    <li>Zone 4 (bas droit) ✓</li>
+                </ol>
+                <p><em>Explication : Les packages s'installent depuis l'onglet "Packages" situé dans la zone 4 (bas droit).</em></p>
+                
+                <p><strong>Question type 2 :</strong> Dans quelle zone s'affichent les résultats d'exécution d'une commande R ?</p>
+                <ol type="a">
+                    <li>Zone 1 (haut gauche)</li>
+                    <li>Zone 2 (bas gauche) ✓</li>
+                    <li>Zone 3 (haut droit)</li>
+                    <li>Zone 4 (bas droit)</li>
+                </ol>
+                <p><em>Explication : Les résultats d'exécution s'affichent dans la console située en zone 2 (bas gauche).</em></p>
+                
+                <p><strong>Question type 3 :</strong> D'après la capture d'écran ci-dessous, combien d'objets sont actuellement dans l'environnement de travail ?</p>
+                <p><em>[Imaginez une capture d'écran montrant l'environnement avec 3 objets]</em></p>
+                <ol type="a">
+                    <li>0</li>
+                    <li>2</li>
+                    <li>3 ✓</li>
+                    <li>4</li>
+                </ol>
+                <p><em>Explication : L'environnement (zone 3) montre la liste des objets créés. Dans cet exemple, il y en a 3.</em></p>
+            </div>
 
-                <h4>Commandes utiles</h4>
-                <div class="code-example">
-                    <pre><code># Donner une valeur à un objet
-a = 5
+            <div class="section-header">
+                <h2>🧠 2. Commandes de base INDISPENSABLES à connaître</h2>
+            </div>
+            
+            <div class="code-example">
+                <pre><code># Les 5 commandes essentielles à connaître PAR CŒUR
+ls()                # liste des objets en mémoire
+rm(list=ls())       # supprime TOUS les objets (nettoie l'environnement)
+getwd()             # affiche le répertoire de travail actuel
+setwd("chemin")     # définit le répertoire de travail
+help(fonction)      # ou ?fonction - affiche l'aide sur une fonction</code></pre>
+            </div>
+            
+            <div class="exam-tip">
+                <p><strong>🎯 Conseil pour l'examen :</strong> Ces 5 commandes sont presque systématiquement demandées dans les examens. Attention à la syntaxe exacte.</p>
+            </div>
+            
+            <div class="qcm-example">
+                <h4>💡 Exemples de questions de QCM sur la détection d'erreurs</h4>
+                
+                <p><strong>Question type 1 :</strong> Quelle erreur se trouve dans ce code ?</p>
+                <pre><code>setwd(c:\documents\data)</code></pre>
+                <ol type="a">
+                    <li>Il manque des guillemets autour du chemin ✓</li>
+                    <li>La fonction s'écrit SetWD()</li>
+                    <li>Il manque une virgule après le chemin</li>
+                    <li>Il manque une parenthèse fermante</li>
+                </ol>
+                <p><em>Explication : Les chemins de fichiers doivent toujours être entre guillemets. Le code correct est <code>setwd("c:/documents/data")</code> (notez aussi que les slashs doivent être dans le bon sens en R).</em></p>
+                
+                <p><strong>Question type 2 :</strong> Quelle commande permet de supprimer tous les objets de l'environnement ?</p>
+                <ol type="a">
+                    <li>clear()</li>
+                    <li>rm(all=TRUE)</li>
+                    <li>rm(list=ls()) ✓</li>
+                    <li>remove.all()</li>
+                </ol>
+                <p><em>Explication : La commande <code>rm(list=ls())</code> supprime tous les objets de l'environnement actuel.</em></p>
+                
+                <p><strong>Question type 3 :</strong> Pour définir le dossier "C:/Travail/Donnees" comme répertoire de travail, quelle commande utiliser ?</p>
+                <ol type="a">
+                    <li>setwd("C:/Travail/Donnees") ✓</li>
+                    <li>getwd("C:/Travail/Donnees")</li>
+                    <li>cd("C:/Travail/Donnees")</li>
+                    <li>dir.set("C:/Travail/Donnees")</li>
+                </ol>
+                <p><em>Explication : La fonction <code>setwd()</code> (set working directory) définit le répertoire de travail.</em></p>
+                
+                <p><strong>Question type 4 :</strong> Quelle erreur se trouve dans ce code ?</p>
+                <pre><code>rm(List=ls())</code></pre>
+                <ol type="a">
+                    <li>Il manque des guillemets</li>
+                    <li>"List" devrait être en minuscules "list" ✓</li>
+                    <li>Il manque une virgule</li>
+                    <li>La fonction ls() est mal utilisée</li>
+                </ol>
+                <p><em>Explication : R est sensible à la casse. Le paramètre s'écrit "list" (en minuscules) et non "List".</em></p>
+            </div>
 
-# Liste les objets en mémoire
-ls()
+            <div class="section-header">
+                <h2>🧠 3. Les objets et vecteurs dans R</h2>
+            </div>
+            
+            <h3>Création d'objets simples</h3>
+            <p>Dans R, un objet est une "boîte" qui contient des données. On utilise les opérateurs d'affectation <code>&lt;-</code> ou <code>=</code> (le premier est préféré en R).</p>
+            
+            <div class="code-example">
+                <pre><code># Création d'objets simples
+a <- 5              # objet numérique
+b <- "Maxime"       # objet texte (chaîne de caractères)
+c <- TRUE           # objet logique (booléen)
 
-# Supprime un objet
-rm(objet)
-
-# Affiche le répertoire de travail
-getwd()
-
-# Change le répertoire de travail
-setwd("chemin")</code></pre>
-                </div>
-
-                <p>Un objet en R est une structure qui stocke des données sous différentes formes, comme un vecteur, une matrice, un data frame ou une liste. Chaque objet a un type et des caractéristiques spécifiques.</p>
-
-                <h3>2. Les bases du langage et des commandes essentielles</h3>
-                <h4>Création et manipulation des objets</h4>
-                <p>Fonction c() : est utilisée pour combiner ou concaténer des éléments en un vecteur. Elle est très couramment utilisée pour créer des vecteurs à partir de valeurs individuelles ou pour regrouper plusieurs éléments ensemble</p>
-
-                <div class="code-example">
-                    <pre><code># Vecteurs
-v <- c(1, 2, 3, 4)
-
-# Matrice
-m <- matrix(1:9, nrow=3, ncol=3)
-
-# Data frame
-df <- data.frame(Nom=c("A", "B"), Age=c(20, 21))</code></pre>
-                </div>
-
-                <h4>Les facteurs : variables catégorielles</h4>
-                <p>Les facteurs sont utilisés pour représenter des variables catégorielles en R. Ils sont particulièrement utiles pour les analyses statistiques et la représentation graphique.</p>
+# Pour afficher le contenu, tapez simplement le nom de l'objet
+a
+[1] 5</code></pre>
+            </div>
+            
+            <div class="must-know">
+                <h3>La fonction c() - INDISPENSABLE</h3>
+                <p><strong>c()</strong> = <strong>c</strong>oncaténer = mettre ensemble plusieurs valeurs dans un vecteur</p>
+                <p>Un vecteur est un objet qui contient plusieurs éléments <strong>du même type</strong>.</p>
                 
                 <div class="code-example">
-                    <pre><code># Création d'un facteur
-sexe <- factor(c("F", "H", "F", "F", "H"))
+                    <pre><code># Création de vecteurs avec c()
+notes <- c(15, 12, 17, 14)    # vecteur numérique
+noms <- c("Alice", "Bob", "Charlie")    # vecteur de caractères
 
-# Vérifier les niveaux d'un facteur
-levels(sexe)  # Renvoie "F" "H"
-
-# Attention aux conversions numériques !
-x <- factor(c("1", "2", "3"))
-as.numeric(x)  # Renvoie 1, 2, 3 (codes internes) et non les valeurs
-
-# Conversion correcte d'un facteur en numérique
-as.numeric(as.character(x))  # Renvoie bien 1, 2, 3 (valeurs)</code></pre>
+# Longueur d'un vecteur
+length(notes)    # renvoie 4
+            
+# Accès aux éléments d'un vecteur avec [index]
+notes[1]        # Premier élément : 15 
+notes[2:3]      # Éléments 2 à 3 : 12 17</code></pre>
                 </div>
-
-                <p>Pour R, le Data frame est un ensemble de vecteurs. Dit plus simplement, il s'agit d'un tableau de données en deux dimensions. Il est similaire à une table dans une base de données ou à une feuille de calcul dans Excel. Les data frames sont particulièrement utiles pour manipuler et analyser des ensembles de données structurés.</p>
-
+            </div>
+            
+            <div class="practice-example">
+                <h4>Exemple à mémoriser</h4>
                 <div class="code-example">
-                    <pre><code># Exemple de création d'un data frame
-my_data <- data.frame(
-    Nom = c("Alice", "Bob", "Charlie"),
-    Age = c(25, 30, 35),
-    Ville = c("Paris", "Lyon", "Marseille")
-)
-
-# Liste
-l <- list(v, m, df)</code></pre>
+                    <pre><code># Utilisation avancée de l'indexation
+enfants <- c("Camille", "Sacha", "Gabrielle")
+enfants[3]       # → "Gabrielle"
+enfants[c(1,3)]  # → "Camille" "Gabrielle"
+enfants[-2]      # → "Camille" "Gabrielle" (tout sauf le 2e élément)</code></pre>
                 </div>
+            </div>
+            
+            <div class="important-note">
+                <p>⚠️ ATTENTION : R est sensible à la casse ! <code>a</code> et <code>A</code> sont deux objets différents.</p>
+            </div>
 
-                <h4>Commandes essentielles</h4>
-                <div class="code-example">
-                    <pre><code>class(objet)  # Type de l'objet
-length(objet)  # Taille d'un vecteur
-head(df)      # Afficher les premières lignes
-tail(df)      # Afficher les dernières lignes
-str(df)       # Structure d'un objet
-summary(df)   # Résumé statistique</code></pre>
-                </div>
-
-                <h4>Opérateurs logiques</h4>
-                <ul>
-                    <li>== (égal à), != (différent de)</li>
-                    <li>> (supérieur à), < (inférieur à)</li>
-                    <li>& (ET logique), | (OU logique)</li>
-                </ul>
-
-                <h4>Utilisation des crochets [ ]</h4>
-                <p>Les crochets [] sont utilisés pour l'indexation et l'extraction de sous-ensembles de données à partir de vecteurs, matrices, listes, et data frames. Ils permettent d'accéder à des éléments spécifiques ou à des sous-ensembles de ces structures de données. Les crochets permettent d'accéder à des lignes et des colonnes spécifiques.</p>
-
-                <div class="code-example">
-                    <pre><code>my_data <- data.frame(
-    Nom = c("Alice", "Bob", "Charlie"),
-    Age = c(25, 30, 35),
-    Ville = c("Paris", "Lyon", "Marseille")
-)
-
-# Accéder à la première ligne
-first_row <- my_data[1, ]
-
-# Accéder à la colonne "Age"
-age_column <- my_data[, "Age"]
-
-# Accéder à l'élément de la première ligne et deuxième colonne
-element <- my_data[1, 2]  # 25</code></pre>
-                </div>
-
-                <h4>Indexation vectorielle avancée</h4>
-                <p>Une des fonctionnalités puissantes de R est la possibilité d'utiliser des vecteurs logiques pour extraire des sous-ensembles de données.</p>
+            <div class="qcm-example">
+                <h4>💡 Exemples de questions de QCM sur les vecteurs</h4>
                 
-                <div class="code-example">
-                    <pre><code># Créer un vecteur
-x <- c(1, 2, 3, 4, 5)
-
-# Utiliser une condition pour extraire des valeurs
-x[x > 2]  # Renvoie [1] 3 4 5
-
-# Ce qui se passe en coulisses :
-# 1. x > 2 crée un vecteur logique : FALSE FALSE TRUE TRUE TRUE
-# 2. R utilise ce vecteur pour sélectionner les éléments correspondants
-
-# Application à un dataframe
-df <- data.frame(Nom = c("Alice", "Bob", "Charlie"), Age = c(25, 30, 35))
-jeunes <- df[df$Age < 30, ]  # Sélectionne les personnes de moins de 30 ans</code></pre>
-                </div>
-
-                <h4>Utilisation du signe $</h4>
-                <p>Le symbole $ est utilisé pour accéder aux éléments d'une liste ou d'un data frame par leur nom. Il offre un moyen simple et lisible d'extraire des colonnes ou des composants spécifiques sans avoir à utiliser des crochets ou des indices numériques.</p>
-                <p>Le symbole $ permet d'accéder directement à une colonne d'un data frame en utilisant son nom.</p>
-
-                <div class="code-example">
-                    <pre><code>my_data <- data.frame(
-    Nom = c("Alice", "Bob", "Charlie"),
-    Age = c(25, 30, 35),
-    Ville = c("Paris", "Lyon", "Marseille")
-)
-
-# Accéder à la colonne "Age"
-age_column <- my_data$Age</code></pre>
-                </div>
-
-                <h4>Gestion des valeurs manquantes (NA)</h4>
-                <p>Les valeurs manquantes (NA) sont fréquentes dans les jeux de données réels. R offre des fonctionnalités spécifiques pour les détecter et les traiter.</p>
+                <p><strong>Question type 1 :</strong> Quel résultat obtiendrez-vous avec le code suivant ?</p>
+                <pre><code>x <- c(10, 20, 30, 40, 50)
+x[c(1, 3, 5)]</code></pre>
+                <ol type="a">
+                    <li>Une erreur</li>
+                    <li>c(10, 20, 30, 40, 50)</li>
+                    <li>c(10, 30, 50) ✓</li>
+                    <li>c(1, 3, 5)</li>
+                </ol>
+                <p><em>Explication : La syntaxe <code>x[c(1, 3, 5)]</code> extrait les éléments aux positions 1, 3 et 5 du vecteur x, soit 10, 30 et 50.</em></p>
                 
-                <div class="code-example">
-                    <pre><code># Création d'un vecteur avec des NA
-x <- c(1, NA, 3, NA, 5)
-
-# IMPORTANT : Les NA ne peuvent pas être comparés directement
-x == NA  # Renvoie NA, NA, NA, NA, NA (incorrect)
-
-# Utiliser is.na() pour détecter les NA
-is.na(x)  # Renvoie FALSE, TRUE, FALSE, TRUE, FALSE
-
-# Compter les NA
-sum(is.na(x))  # Renvoie 2
-
-# Fonctions statistiques avec gestion des NA
-mean(x)         # Renvoie NA car il y a des valeurs manquantes
-mean(x, na.rm = TRUE)  # Renvoie 3 (moyenne sans les NA)
-median(x, na.rm = TRUE)  # Médiane sans les NA
-
-# Filtrer les NA
-x[!is.na(x)]    # Renvoie 1, 3, 5</code></pre>
-                </div>
-
-                <h3>3. Manipulation et traitement des données</h3>
-                <h4>Importer et exporter des données</h4>
-                <div class="code-example">
-                    <pre><code># Importer un fichier CSV
-df <- read.csv("fichier.csv")
-
-# Exemple complet d'importation
-df0=read.csv2(file="https://raw.githubusercontent.com/guillaume-bourgeois92/ACP/main/ex_notes_compta_compta_stats_gfi_pour_import.csv",
-              sep=";", # préciser quel est le séparateur de colonne est le point-virgule
-              dec="." , #préciser que le séparateur de décimales est le point (système anglo saxon)
-              check.names=F, #toujours utiliser cet argument pour éviter des problèmes d'importation dans le nom des variables 
-              row.names=1 #le nom des lignes est indiqué dans la première colonne du fichier csv
-)
-
-# Exporter un fichier CSV
-write.csv(df, "fichier.csv")</code></pre>
-                </div>
-
-                <h4>Fusion de données</h4>
-                <p>La fonction merge() permet de combiner deux dataframes en fonction d'une ou plusieurs colonnes communes, similaire aux jointures SQL.</p>
-                <div class="code-example">
-                    <pre><code># Deux dataframes à fusionner
-clients <- data.frame(
-    id = 1:3,
-    nom = c("Dupont", "Martin", "Durand"),
-    age = c(45, 32, 58)
-)
-
-achats <- data.frame(
-    id = c(1, 2, 4),
-    produit = c("Ordinateur", "Téléphone", "Tablette"),
-    prix = c(1200, 800, 500)
-)
-
-# Jointure interne (inner join) - uniquement les lignes communes
-# Résultat: id 1 et 2 uniquement
-inner_join <- merge(clients, achats, by="id")
-
-# Jointure externe gauche (left join) - conserve toutes les lignes de clients
-# Résultat: id 1, 2, 3 (avec NA pour les produits/prix de l'id 3)
-left_join <- merge(clients, achats, by="id", all.x=TRUE)
-
-# Jointure externe droite (right join) - conserve toutes les lignes d'achats
-# Résultat: id 1, 2, 4 (avec NA pour nom/age de l'id 4)
-right_join <- merge(clients, achats, by="id", all.y=TRUE)
-
-# Jointure externe complète (full join) - conserve toutes les lignes des deux dataframes
-# Résultat: id 1, 2, 3, 4 (avec NA pour les valeurs manquantes)
-full_join <- merge(clients, achats, by="id", all=TRUE)</code></pre>
-                </div>
-
-                <h4>Sélection et modification de données</h4>
-                <div class="code-example">
-                    <pre><code># Accéder à une colonne
-df$Nom
-
-# Sélectionner la première ligne
-df[1, ]
-
-# Filtrer les données
-subset(df, Age > 20)</code></pre>
-                </div>
-
-                <h4>Ajout de packages</h4>
-                <p>R est un logiciel libre de droit qui comprend certaines fonctions de bases. Pour en ajouter d'autres, qui permettraient de faire plus de manipulations on ajoute des "packages". Pour importer un package vous devez l'installer. L'installation de packages se fait via l'interface dédiée dans Rstudio (zone 4, en bas à droite) où vous devez dans un premier temps sélectionner l'onglet Packages, puis cliquer sur « install". En gros c'est ajouter des lignes de codes en plus dans ton ordi pour que le programme en puisse lire des nouvelles, plus complexes.</p>
+                <p><strong>Question type 2 :</strong> Quelle erreur se trouve dans ce code ?</p>
+                <pre><code>ages <- c(25, 31, "28", 42)</code></pre>
+                <ol type="a">
+                    <li>Il n'y a pas d'erreur, mais tous les éléments seront convertis en caractères ✓</li>
+                    <li>Il faut utiliser la fonction array() pour des valeurs numériques</li>
+                    <li>Le nombre 28 ne doit pas être entre guillemets</li>
+                    <li>La virgule est incorrecte, il faut utiliser le point-virgule</li>
+                </ol>
+                <p><em>Explication : Quand un vecteur contient des éléments de types différents, R les convertit tous au type le plus général. Ici, comme il y a une chaîne ("28"), tous les éléments seront convertis en chaînes de caractères.</em></p>
                 
+                <p><strong>Question type 3 :</strong> Pour créer un vecteur contenant les valeurs 5, 6, 7, 8, 9, quelle est la syntaxe la plus efficace ?</p>
+                <ol type="a">
+                    <li>c(5, 6, 7, 8, 9)</li>
+                    <li>5:9 ✓</li>
+                    <li>seq(5, 9)</li>
+                    <li>vector(5:9)</li>
+                </ol>
+                <p><em>Explication : L'opérateur ":" crée une séquence de nombres consécutifs. 5:9 crée donc un vecteur contenant les valeurs 5, 6, 7, 8, 9.</em></p>
+                
+                <p><strong>Question type 4 :</strong> Si vous exécutez le code suivant, quel sera le résultat ?</p>
+                <pre><code>v <- c("a", "b", "c", "d", "e")
+v[-2]</code></pre>
+                <ol type="a">
+                    <li>c("b")</li>
+                    <li>c("a", "c", "d", "e") ✓</li>
+                    <li>c("a", "b", "c", "d")</li>
+                    <li>Une erreur</li>
+                </ol>
+                <p><em>Explication : L'indexation négative supprime l'élément correspondant. Ici, v[-2] retourne le vecteur original sans le 2ème élément, donc c("a", "c", "d", "e").</em></p>
+            </div>
+
+            <div class="section-header">
+                <h2>🧠 4. Les data frames (FONDAMENTAL pour l'examen)</h2>
+            </div>
+            
+            <p>Un data frame est un tableau de données à deux dimensions :</p>
+            <ul>
+                <li>Les <strong>colonnes</strong> représentent des <strong>variables</strong></li>
+                <li>Les <strong>lignes</strong> représentent des <strong>observations/individus</strong></li>
+            </ul>
+            
+            <div class="must-know">
+                <h3>Accéder aux data frames</h3>
                 <div class="code-example">
-                    <pre><code># Installation d'un package
-install.packages("ggplot2")
+                    <pre><code># Charger un jeu de données intégré
+data(iris)       # charge le jeu de données iris
 
-# Chargement d'un package
-library(ggplot2)
-
-# Vérifier les packages installés
-installed.packages()</code></pre>
+# Fonctions essentielles pour explorer un data frame
+View(iris)       # ouvre le tableau dans une fenêtre séparée
+head(iris)       # affiche les 6 premières lignes
+tail(iris)       # affiche les 6 dernières lignes
+dim(iris)        # dimensions (nb lignes, nb colonnes)
+str(iris)        # structure (types des colonnes)
+summary(iris)    # résumé statistique</code></pre>
                 </div>
-
-                <h3>4. Visualisation des données</h3>
-                <h4>Graphiques de base</h4>
+            </div>
+            
+            <h3>Accéder aux éléments d'un data frame</h3>
+            <p>Il existe <strong>deux méthodes principales</strong> pour accéder aux données :</p>
+            
+            <div class="must-know">
+                <h4>1. Utilisation du symbole $ (TRÈS IMPORTANT)</h4>
                 <div class="code-example">
-                    <pre><code># Nuage de points
-plot(x, y)
+                    <pre><code># Le symbole $ permet d'accéder directement à une colonne
+iris$Species     # accède à la colonne Species
+mean(iris$Sepal.Length)    # calcule la moyenne de la colonne</code></pre>
+                </div>
+                
+                <h4>2. Utilisation des crochets [ ] (FONDAMENTAL)</h4>
+                <div class="code-example">
+                    <pre><code># Syntaxe : data_frame[lignes, colonnes]
+iris[1,3]        # 1ère ligne, 3e colonne
+iris[1:5, ]      # 5 premières lignes, toutes les colonnes
+iris[ ,2]        # toutes les lignes, 2e colonne
+iris[1:5, 2:3]   # 5 premières lignes, colonnes 2 et 3
+
+# Filtrer avec des conditions
+iris[iris$Species == "setosa", ]    # uniquement les lignes où Species est "setosa"
+iris[iris$Sepal.Length > 5, ]       # uniquement les lignes où Sepal.Length > 5</code></pre>
+                </div>
+                
+                <div class="exam-tip">
+                    <p><strong>🎯 Conseil pour l'examen :</strong> La compréhension des data frames et la maîtrise de l'accès aux données avec $ et [ ] sont <strong>indispensables</strong> pour réussir l'examen.</p>
+                </div>
+            </div>
+
+            <div class="qcm-example">
+                <h4>💡 Exemples de questions de QCM sur les data frames</h4>
+                
+                <p><strong>Question type 1 :</strong> Pour accéder à la colonne "Age" d'un data frame nommé "clients", quelle syntaxe est correcte ?</p>
+                <ol type="a">
+                    <li>clients[Age]</li>
+                    <li>clients$Age ✓</li>
+                    <li>clients["Age"]</li>
+                    <li>clients.Age</li>
+                </ol>
+                <p><em>Explication : Pour accéder à une colonne d'un data frame par son nom, on utilise la syntaxe dataframe$nom_colonne, ici clients$Age.</em></p>
+                
+                <p><strong>Question type 2 :</strong> Quelle erreur se trouve dans ce code ?</p>
+                <pre><code>data <- data.frame(nom = c("Alice", "Bob", "Charlie"),
+                  age = c(25, 30, 35))
+data[2, nom]</code></pre>
+                <ol type="a">
+                    <li>La virgule est mal placée</li>
+                    <li>"nom" devrait être entre guillemets ✓</li>
+                    <li>Il manque une parenthèse fermante</li>
+                    <li>Il faut utiliser $ au lieu de la virgule</li>
+                </ol>
+                <p><em>Explication : Les noms de colonnes utilisés à l'intérieur des crochets doivent être entre guillemets. Le code correct est <code>data[2, "nom"]</code>.</em></p>
+                
+                <p><strong>Question type 3 :</strong> Pour afficher uniquement les lignes d'un data frame "df" où la valeur de la colonne "note" est supérieure à 10, quelle syntaxe utiliser ?</p>
+                <ol type="a">
+                    <li>df$note > 10</li>
+                    <li>subset(df, note > 10) ✓</li>
+                    <li>df[note > 10]</li>
+                    <li>filter(df, note > 10)</li>
+                </ol>
+                <p><em>Explication : La fonction <code>subset()</code> permet de filtrer un data frame selon une condition. Alternativement, on peut aussi utiliser <code>df[df$note > 10, ]</code>.</em></p>
+                
+                <p><strong>Question type 4 :</strong> Si vous avez un data frame "etudiants" avec 30 lignes et 4 colonnes, que renvoie <code>etudiants[5:10, c(1, 3)]</code> ?</p>
+                <ol type="a">
+                    <li>Les lignes 5 à 10 et toutes les colonnes</li>
+                    <li>La 5ème ligne et la 10ème ligne, colonnes 1 et 3</li>
+                    <li>Les lignes 5 à 10, colonnes 1 et 3 ✓</li>
+                    <li>Les colonnes 5 à 10, lignes 1 et 3</li>
+                </ol>
+                <p><em>Explication : La syntaxe dataframe[lignes, colonnes] extrait les lignes et colonnes spécifiées. Ici, on extrait les lignes 5 à 10 et les colonnes 1 et 3.</em></p>
+                
+                <p><strong>Question type 5 :</strong> Quelle fonction permet d'afficher la structure d'un data frame (types de variables, etc.) ?</p>
+                <ol type="a">
+                    <li>str() ✓</li>
+                    <li>summary()</li>
+                    <li>structure()</li>
+                    <li>describe()</li>
+                </ol>
+                <p><em>Explication : La fonction <code>str()</code> affiche la structure d'un objet R, y compris les types de variables d'un data frame.</em></p>
+            </div>
+
+            <div class="section-header">
+                <h2>🧠 5. Importation de données (CSV)</h2>
+            </div>
+            
+            <div class="must-know">
+                <p>L'importation de données est une compétence <strong>cruciale</strong> pour tout utilisateur de R.</p>
+                
+                <h3>A. Importer depuis un lien internet</h3>
+                <div class="code-example">
+                    <pre><code>df <- read.csv2(file="https://site.com/fichier.csv",
+                sep=";",         # séparateur de colonnes
+                dec=".",         # séparateur décimal
+                check.names=F,   # évite les erreurs de noms de colonnes
+                row.names=1)     # 1ère colonne = noms des lignes</code></pre>
+                </div>
+                
+                <h3>B. Importer depuis un fichier local</h3>
+                <div class="code-example">
+                    <pre><code># Méthode interactive (ouvre une fenêtre de sélection)
+df <- read.csv2(file.choose(), 
+                sep=";", 
+                dec=".", 
+                check.names=F)
+
+# Ou avec un chemin direct
+df <- read.csv2("C:/Users/nom/Documents/fichier.csv",
+                sep=";", 
+                dec=".", 
+                check.names=F)</code></pre>
+                </div>
+                
+                <div class="important-note">
+                    <p>⚠️ MÉMORISER les paramètres clés :</p>
+                    <ul>
+                        <li><code>sep=";"</code> : séparateur de colonnes (souvent ";" en Europe, "," aux USA)</li>
+                        <li><code>dec="."</code> : séparateur décimal (souvent "." aux USA, "," en Europe)</li>
+                        <li><code>row.names=1</code> : si la 1ère colonne contient les noms des lignes</li>
+                        <li><code>check.names=F</code> : évite les erreurs de noms de colonnes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>🧠 6. Statistiques descriptives</h2>
+            </div>
+            
+            <h3>A. Fonctions statistiques de base</h3>
+            <div class="code-example">
+                <pre><code># Fonctions statistiques essentielles
+mean(x)          # moyenne
+median(x)        # médiane
+sd(x)            # écart-type
+var(x)           # variance
+min(x)           # minimum
+max(x)           # maximum
+range(x)         # étendue (min et max)
+sum(x)           # somme des valeurs
+IQR(x)           # écart interquartile
+quantile(x)      # quartiles
+
+# Avec des données manquantes (NA)
+mean(x, na.rm=TRUE)    # ignore les NA dans le calcul</code></pre>
+            </div>
+            
+            <h3>B. Utilisation du package pastecs</h3>
+            <div class="code-example">
+                <pre><code># Installation (une seule fois nécessaire)
+install.packages("pastecs")
+
+# Charger le package (à chaque session)
+library(pastecs)
+
+# Obtenir des statistiques détaillées
+stat.desc(df$variable)</code></pre>
+            </div>
+            
+            <div class="exam-tip">
+                <p><strong>🎯 Conseil pour l'examen :</strong> Apprenez à distinguer <code>sd()</code> (écart-type) et <code>var()</code> (variance) - c'est une erreur fréquente aux examens.</p>
+            </div>
+
+            <div class="section-header">
+                <h2>🧠 7. Dénombrement et tableaux croisés</h2>
+            </div>
+            
+            <p>Le dénombrement est une compétence <strong>très fréquemment évaluée</strong> dans les examens.</p>
+            
+            <div class="must-know">
+                <h3>A. Dénombrement simple</h3>
+                <div class="code-example">
+                    <pre><code># Compter les occurrences
+table(df$sexe)    # Effectifs par modalité
+
+# Tableau de fréquences (proportions)
+prop.table(table(df$sexe))    # Proportions
+round(prop.table(table(df$sexe)), 2)    # Arrondi à 2 décimales</code></pre>
+                </div>
+                
+                <h3>B. Tableaux croisés</h3>
+                <div class="code-example">
+                    <pre><code># Tableau croisé à double entrée
+table(df$sexe, df$fumeur)    # Effectifs croisés
+
+# Fréquences
+prop.table(table(df$sexe, df$fumeur))    # Proportions globales
+
+# Fréquences conditionnelles
+prop.table(table(df$sexe, df$fumeur), margin=1)    # Par ligne
+prop.table(table(df$sexe, df$fumeur), margin=2)    # Par colonne</code></pre>
+                </div>
+            </div>
+            
+            <div class="practice-example">
+                <h4>Exemple complet</h4>
+                <div class="code-example">
+                    <pre><code># Création d'un data frame d'exemple
+df <- data.frame(
+    sexe = c("H", "F", "H", "F", "F", "H"),
+    fumeur = c("oui", "non", "oui", "non", "oui", "non")
+)
+
+# Tableau croisé
+table(df$sexe, df$fumeur)
+#    non oui
+# F   2   1
+# H   1   2
+
+# Proportions par ligne (pour chaque sexe)
+prop.table(table(df$sexe, df$fumeur), margin=1)
+#      non   oui
+# F  0.667 0.333
+# H  0.333 0.667</code></pre>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>🧠 8. Manipuler les données</h2>
+            </div>
+            
+            <div class="must-know">
+                <h3>A. Créer de nouvelles variables</h3>
+                <div class="code-example">
+                    <pre><code># Créer une nouvelle colonne
+df$prix_ttc <- df$prix_ht * 1.2    # Prix TTC (120% du prix HT)
+
+# Création conditionnelle avec ifelse
+df$admis <- ifelse(df$note >= 10, "oui", "non")
+
+# Transformation en facteur (catégoriel)
+df$admis <- factor(df$admis)    # Convertit en facteur</code></pre>
+                </div>
+                
+                <h3>B. Filtrer et trier les données</h3>
+                <div class="code-example">
+                    <pre><code># Filtrer les observations
+admis <- df[df$note >= 10, ]    # Seulement les notes ≥ 10
+hommes <- df[df$sexe == "H", ]  # Seulement les hommes
+subset(df, note >= 10 & sexe == "F")    # Femmes avec note ≥ 10
+
+# Trier les données
+df[order(df$note), ]                    # Tri croissant par note
+df[order(df$note, decreasing=TRUE), ]   # Tri décroissant par note
+df[order(df$sexe, df$note), ]           # Tri par sexe puis par note</code></pre>
+                </div>
+                
+                <h3>C. Modifier les noms des colonnes</h3>
+                <div class="code-example">
+                    <pre><code># Renommer une colonne spécifique
+colnames(df)[1] <- "nouvelle_colonne"    # Renomme la 1ère colonne
+
+# Renommer toutes les colonnes
+colnames(df) <- c("col1", "col2", "col3")    # Renomme toutes les colonnes</code></pre>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>9. Graphiques avec R</h2>
+            </div>
+            
+            <h3>A. Graphiques de base</h3>
+            <div class="code-example">
+                <pre><code># Diagramme en barres
+barplot(table(df$sexe))
+
+# Personnalisation
+barplot(table(df$sexe), 
+        col="blue",               # couleur
+        main="Effectif par sexe", # titre
+        ylab="Nombre",            # axe Y
+        xlab="Sexe",              # axe X
+        las=2)                    # orientation des étiquettes
+
+# Nuage de points
+plot(x=iris$Sepal.Length, y=iris$Petal.Length)
 
 # Histogramme
-hist(df$Age)
+hist(df$note, col="gold", border="white", main="Répartition des notes")
 
-# Boxplot
-boxplot(df$Age ~ df$Nom)</code></pre>
-                </div>
+# Boîte à moustaches (boxplot)
+boxplot(df$note, main="Distribution des notes", col="red")</code></pre>
+            </div>
+            
+            <h3>B. Nuage de points avec couleurs par groupe</h3>
+            <div class="code-example">
+                <pre><code># Nuage de points avec couleurs par espèce
+plot(x=iris$Sepal.Length, 
+     y=iris$Petal.Length, 
+     col=iris$Species,            # couleur selon l'espèce 
+     pch=16)                      # type de point (cercle plein)
 
-                <h4>Visualisation avancée avec ggplot2</h4>
-                <p>ggplot2 est un package puissant qui implémente la "grammaire des graphiques", une approche basée sur des couches pour créer des visualisations complexes et élégantes.</p>
-                <div class="code-example">
-                    <pre><code># Charger le package
-library(ggplot2)
+# Ajouter une légende
+legend("topright", 
+       legend=levels(iris$Species),    # les différentes espèces
+       col=1:3,                        # couleurs correspondantes
+       pch=16)                         # type de point</code></pre>
+            </div>
+            
+            <div class="exam-tip">
+                <p><strong>🎯 Conseil pour l'examen :</strong> Les paramètres de personnalisation des graphiques sont souvent demandés (main, xlab, ylab, col, pch).</p>
+            </div>
 
-# La structure de base d'un graphique ggplot2 :
-# 1. Données (dataframe)
-# 2. Mapping esthétique (aes) - quelles variables pour quels aspects visuels
-# 3. Géométries (geom_) - comment représenter les données
-
-# Diagramme à barres
-ggplot(data = df, aes(x = Nom, y = Age)) + 
-  geom_bar(stat = "identity", fill = "steelblue")
-
-# Nuage de points avec ligne de tendance
-ggplot(data = df, aes(x = taille, y = poids)) + 
-  geom_point() +              # Les points
-  geom_smooth(method = "lm") + # Ligne de régression
-  labs(title = "Relation Taille-Poids",  # Titre
-       x = "Taille (cm)",                # Axe X
-       y = "Poids (kg)")                 # Axe Y
-
-# Boxplot par groupe
-ggplot(data = df, aes(x = groupe, y = valeur, fill = groupe)) + 
-  geom_boxplot() +
-  theme_minimal()  # Theme épuré</code></pre>
-                </div>
-
-                <h3>5. Programmation et automatisation</h3>
-                <h4>Structures de contrôle</h4>
-                <div class="code-example">
-                    <pre><code># Condition if-else
-if (x > 10) { 
-    print("Grand") 
-} else { 
-    print("Petit") 
-}
-
-# Boucle for
-for (i in 1:5) { 
-    print(i) 
-}</code></pre>
-                </div>
-
-                <h4>Création de fonctions robustes</h4>
-                <p>Les fonctions bien conçues incluent la gestion des erreurs et des cas particuliers pour éviter les plantages.</p>
-                <div class="code-example">
-                    <pre><code># Fonction simple
-moyenne <- function(x) {
-    return(sum(x) / length(x))
-}
-
-# Fonction robuste avec gestion des erreurs
-moyenne_robuste <- function(x) {
-    # Vérifier si l'argument est NULL
-    if(is.null(x)) {
-        warning("Argument NULL, retourne NA")
-        return(NA)
-    }
-    
-    # Vérifier si c'est un vecteur numérique
-    if(!is.numeric(x)) {
-        warning("Argument non numérique, tentative de conversion")
-        x <- as.numeric(x)
-        
-        # Si la conversion a échoué (créé des NA)
-        if(any(is.na(x))) {
-            warning("Conversion impossible, retourne NA")
-            return(NA)
-        }
-    }
-    
-    # Gestion des NA
-    if(any(is.na(x))) {
-        warning("Valeurs manquantes détectées, elles seront ignorées")
-        return(sum(x, na.rm = TRUE) / sum(!is.na(x)))
-    }
-    
-    # Cas normal
-    return(sum(x) / length(x))
-}</code></pre>
-                </div>
-
-                <h3>6. Analyse statistique de base</h3>
-                <h4>Statistiques descriptives</h4>
-                <p>Tout comme dans excel avec les fonction =somme() ou =Moy() Dans R, il existe des fonctions pour effectuer des calculs statistiques sur les bases de données que tu as enregistré dans ton code.</p>
-
-                <table class="code-example">
-                    <tr>
-                        <th>Nom de la fonction</th>
-                        <th>Indicateur statistique calculé</th>
-                    </tr>
-                    <tr>
-                        <td>mean()</td>
-                        <td>Moyenne</td>
-                    </tr>
-                    <tr>
-                        <td>sd()</td>
-                        <td>Ecart-type</td>
-                    </tr>
-                    <tr>
-                        <td>var()</td>
-                        <td>Variance</td>
-                    </tr>
-                    <tr>
-                        <td>cov()</td>
-                        <td>Covariance</td>
-                    </tr>
-                    <tr>
-                        <td>median()</td>
-                        <td>Médiane</td>
-                    </tr>
-                    <tr>
-                        <td>min()</td>
-                        <td>Minimum</td>
-                    </tr>
-                    <tr>
-                        <td>max()</td>
-                        <td>Maximum</td>
-                    </tr>
-                    <tr>
-                        <td>range()</td>
-                        <td>Etendue</td>
-                    </tr>
-                    <tr>
-                        <td>sum()</td>
-                        <td>Somme des valeurs</td>
-                    </tr>
-                </table>
-
-                <div class="code-example">
-                    <pre><code># Exemples d'utilisation
-mean(df$Age)
-median(df$Age)
-var(df$Age)
-sd(df$Age)</code></pre>
-                </div>
-
-                <h4>Tests statistiques et régressions</h4>
-                <div class="code-example">
-                    <pre><code># Test de Student
-t.test(Age ~ Sexe, data=df)
+            <div class="section-header">
+                <h2>10. Manipulations spécifiques</h2>
+            </div>
+            
+            <h3>A. Arrondir des valeurs</h3>
+            <div class="code-example">
+                <pre><code># Arrondir à 2 décimales après la virgule
+round(c(1.2345, 3.4567), 2)    # Renvoie 1.23 3.46</code></pre>
+            </div>
+            
+            <h3>B. Matrices de corrélation</h3>
+            <div class="code-example">
+                <pre><code># Matrice de corrélation
+cor(iris[,1:4])    # Calcule les corrélations entre les 4 variables numériques</code></pre>
+            </div>
+            
+            <h3>C. Tests statistiques de base</h3>
+            <div class="code-example">
+                <pre><code># Test t de Student (comparaison de moyennes)
+t.test(note ~ sexe, data=df)    # Compare les moyennes des notes selon le sexe
 
 # Régression linéaire
-mod <- lm(Age ~ Taille, data=df)
+modele <- lm(Petal.Length ~ Sepal.Length, data=iris)
+summary(modele)    # Résumé du modèle
+plot(modele)       # Diagnostics graphiques</code></pre>
+            </div>
 
-# Résumé du modèle
-summary(mod)</code></pre>
-                </div>
+            <div class="section-header">
+                <h2>11. Astuces pour l'examen</h2>
+            </div>
+            
+            <div class="must-know">
+                <h3>Points à retenir absolument</h3>
+                <ul>
+                    <li>Structure de RStudio (les 4 zones)</li>
+                    <li>Commandes de base: <code>ls()</code>, <code>rm(list=ls())</code>, <code>getwd()</code>, <code>setwd()</code></li>
+                    <li>Création de vecteurs avec <code>c()</code></li>
+                    <li>Manipulation des data frames avec <code>$</code> et <code>[ ]</code></li>
+                    <li>Import de données CSV avec <code>read.csv2()</code></li>
+                    <li>Statistiques descriptives: <code>mean()</code>, <code>median()</code>, <code>sd()</code></li>
+                    <li>Tableaux de dénombrement: <code>table()</code> et <code>prop.table()</code></li>
+                    <li>Filtrage et création de nouvelles variables</li>
+                </ul>
+            </div>
+            
+            <div class="exam-tip">
+                <h3>Conseils de dernière minute</h3>
+                <ul>
+                    <li>Mémorisez la syntaxe exacte des fonctions principales</li>
+                    <li>Attention aux parenthèses et à la casse (R est sensible à la casse)</li>
+                    <li>Pratiquez les manipulations de base sur des exemples simples</li>
+                    <li>Pour extraire une colonne: utilisez <code>df$colonne</code> ou <code>df[, "colonne"]</code></li>
+                    <li>Pour filtrer: <code>df[df$colonne > valeur, ]</code> (n'oubliez pas la virgule!)</li>
+                </ul>
+            </div>
 
-                <div class="navigation">
-                    <button onclick="window.location.href='index.html'" class="course-button">
-                        Retour au menu
-                    </button>
-                </div>
+            <div class="navigation">
+                <button onclick="window.location.href='index.html'" class="course-button">
+                    Retour au menu
+                </button>
             </div>
         </div>
     </div>
