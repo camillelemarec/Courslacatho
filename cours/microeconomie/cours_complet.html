@@ -52,15 +52,407 @@
         </div>
     </div>
     
-    <div class="content coming-soon">
+    <div class="content">
         <h1>Microéconomie - Cours Complet</h1>
-        <div class="message">
-            <p>🚧 Le cours complet de Microéconomie est en cours de préparation ... 🚧</p>
-            <p>Nous travaillons actuellement sur la rédaction du contenu pour ce cours.</p>
-            <p>Revenez prochainement pour découvrir le support de cours complet avec tous les concepts essentiels de microéconomie !</p>
-            <button onclick="window.location.href='index.html'" class="course-button">
-                Retour à la page du cours
-            </button>
+        <div class="course-content">
+            <h2>Microéconomie</h2>
+            
+            <div class="table-of-contents">
+                <h3>Table des matières</h3>
+                <ul>
+                    <li><a href="#section2">Section 2 : La concurrence parfaite</a></li>
+                    <li><a href="#section3">Section 3 : Le Monopole</a></li>
+                    <li><a href="#section4">Section 4 : Théorie des jeux et comportements stratégiques</a></li>
+                    <li><a href="#section5">Section 5 : Oligopole et Duopole</a></li>
+                </ul>
+            </div>
+            
+            <section id="section2">
+                <h3>Section 2 : La concurrence parfaite</h3>
+                
+                <h4>2.1 Définition de la concurrence pure et parfaite</h4>
+                <p>Un marché est en concurrence pure et parfaite (CPP) s'il respecte 5 conditions :</p>
+                <ol>
+                    <li><strong>Homogénéité</strong> : le produit est strictement identique quel que soit le producteur.</li>
+                    <li><strong>Atomicité</strong> : il existe un grand nombre d'offreurs et de demandeurs, aucun n'a de pouvoir de marché.</li>
+                    <li><strong>Libre entrée et sortie</strong> : les entreprises peuvent entrer ou quitter librement le marché.</li>
+                    <li><strong>Transparence de l'information</strong> : tous les agents connaissent les prix et les caractéristiques des produits.</li>
+                    <li><strong>Mobilité parfaite des facteurs</strong> : les ressources peuvent être réallouées sans coût.</li>
+                </ol>
+                <p>En CPP, les entreprises sont <strong>preneurs de prix</strong> (price takers) : elles acceptent le prix du marché comme une donnée.</p>
+                
+                <h4>2.2 La fonction d'offre individuelle à court terme</h4>
+                <p><strong>a) Objectif de la firme : maximiser son profit</strong></p>
+                <div class="code-example">
+                    <pre><code>π(y) = R(y) - C(y) = p·y - C(y)</code></pre>
+                </div>
+                <ul>
+                    <li>y : quantité produite</li>
+                    <li>p : prix de marché (donné)</li>
+                    <li>C(y) : coût total</li>
+                    <li>R(y) = p·y : recette totale</li>
+                </ul>
+                
+                <p><strong>b) Condition de maximisation du profit</strong></p>
+                <div class="code-example">
+                    <pre><code>p = Cm(y)</code></pre>
+                </div>
+                <ul>
+                    <li>Cm(y) : coût marginal</li>
+                </ul>
+                <p>Tant que p > Cm(y), produire une unité supplémentaire augmente le profit.<br>
+                Quand p = Cm(y), le profit est maximal.</p>
+                
+                <h4>2.3 Condition de fermeture (court terme)</h4>
+                <p>Même si l'entreprise est en perte, elle peut continuer à produire si cela couvre les coûts variables.</p>
+                <ul>
+                    <li>Si p ≥ CVM(y) → la firme continue à produire</li>
+                    <li>Si p < CVM(y) → la firme ferme (perte > coût fixe)</li>
+                </ul>
+                <p>Le seuil de fermeture p<sub>F</sub> est le minimum du coût variable moyen (CVM).</p>
+                
+                <h4>2.4 Seuil de rentabilité</h4>
+                <ul>
+                    <li>Si p = CM(y) (coût moyen minimum), le profit est nul.</li>
+                    <li>Si p > CM(y), la firme réalise un profit.</li>
+                    <li>Le seuil de rentabilité p<sub>R</sub> est le minimum du coût moyen (CM).</li>
+                </ul>
+                
+                <h4>2.5 Fonction d'offre à court terme</h4>
+                <p>Pour p ≥ p<sub>F</sub>, l'entreprise offre la quantité où p = Cm(y).</p>
+                <p>Graphiquement :</p>
+                <ul>
+                    <li>L'offre est nulle pour p < p<sub>F</sub></li>
+                    <li>Pour p ≥ p<sub>F</sub>, l'offre est donnée par la courbe du coût marginal (au-dessus de CVM)</li>
+                </ul>
+                
+                <h4>2.6 Surplus du producteur</h4>
+                <div class="code-example">
+                    <pre><code>SP = RT - CV = p·y - CV(y)</code></pre>
+                </div>
+                <ul>
+                    <li>C'est l'aire entre le prix de marché et la courbe de coût marginal.</li>
+                    <li>Il mesure le gain net du producteur sur ses coûts variables.</li>
+                </ul>
+                
+                <h4>2.7 Offre de long terme</h4>
+                <p>À long terme :</p>
+                <ul>
+                    <li>Tous les facteurs sont variables</li>
+                    <li>Il n'y a plus de coûts fixes</li>
+                </ul>
+                <p>La firme reste sur le marché si :</p>
+                <div class="code-example">
+                    <pre><code>p ≥ CM<sub>LT</sub>(y)</code></pre>
+                </div>
+                <p>La fonction d'offre de long terme est aussi la courbe de coût marginal, mais au-dessus du coût moyen de long terme.</p>
+                
+                <h4>2.8 Équilibre du marché concurrentiel</h4>
+                <p><strong>a) Détermination du prix d'équilibre</strong></p>
+                <p>L'équilibre est atteint quand :</p>
+                <div class="code-example">
+                    <pre><code>O(p*) = D(p*)</code></pre>
+                </div>
+                <ul>
+                    <li>O(p) : offre agrégée (croissante)</li>
+                    <li>D(p) : demande agrégée (décroissante)</li>
+                </ul>
+                <p>Graphiquement : intersection entre les courbes d'offre et de demande</p>
+                
+                <h4>2.9 Efficacité de l'équilibre concurrentiel</h4>
+                <ul>
+                    <li>Le marché concurrentiel conduit à une allocation Pareto-efficace :<br>
+                    On ne peut améliorer la situation de quelqu'un sans détériorer celle d'un autre.</li>
+                    <li>La quantité produite correspond à celle où :<br>
+                    Prix = Coût marginal = Disposition marginale à payer</li>
+                </ul>
+            </section>
+            
+            <section id="section3">
+                <h3>Section 3 : Le Monopole</h3>
+                
+                <h4>3.1 Définition et caractéristiques</h4>
+                <p>•	Le monopole est une structure de marché dans laquelle une seule entreprise produit un bien ou service sans substitut proche.</p>
+                <p>•	Cette entreprise est faiseuse de prix (price maker), contrairement à la concurrence parfaite où les entreprises sont preneur de prix (price takers).</p>
+                <p>•	Le monopole fait face à l'ensemble de la demande du marché.</p>
+                
+                <h4>3.2 Origines du monopole</h4>
+                <p>1.	Monopole naturel : lorsque les coûts fixes sont très élevés et les coûts marginaux faibles, une seule entreprise peut produire à moindre coût pour l'ensemble du marché (ex : transports, énergie).</p>
+                <p>2.	Innovation : lorsqu'une entreprise introduit un nouveau produit ou procédé, elle peut dominer temporairement le marché.</p>
+                <p>3.	Brevet : donne un droit exclusif temporaire sur une innovation.</p>
+                <p>4.	Monopole légal : attribué par l'État à une entreprise (ex : tabac, jeux de hasard, nucléaire).</p>
+                
+                <h4>3.3 Objectif du monopole et décision d'équilibre</h4>
+                <p>Objectif :</p>
+                <div class="code-example">
+                    <pre><code>π(y) = R(y) - C(y)</code></pre>
+                </div>
+                <p>où :</p>
+                <ul>
+                    <li>π(y) = profit</li>
+                    <li>R(y) = recette totale</li>
+                    <li>C(y) = coût total</li>
+                    <li>y = quantité produite</li>
+                </ul>
+                <p>Fonction de demande inverse :</p>
+                <div class="code-example">
+                    <pre><code>p(y) = a - b·y</code></pre>
+                </div>
+                <p>où :</p>
+                <ul>
+                    <li>p(y) = prix en fonction de la quantité</li>
+                    <li>a = prix maximum (quand y=0)</li>
+                    <li>b = pente de la demande (élasticité)</li>
+                </ul>
+                
+                <h4>Formules essentielles du monopole</h4>
+                <div class="code-example">
+                    <pre><code>Formule              Expression               Signification
+Recette totale R(y)     y·p(y) = ay - by²         Chiffre d'affaires
+Recette moyenne RM(y)   R(y)/y = p(y) = a - by    Prix moyen
+Recette marginale Rm(y) dR(y)/dy = a - 2by        Variation de la recette
+Coût total C(y)         F + cy²                   Coût fixe + coût variable
+Coût marginal Cm(y)     dC(y)/dy = 2cy            Coût d'une unité supplémentaire
+Coût moyen CM(y)        C(y)/y = F/y + cy         Coût unitaire moyen</code></pre>
+                </div>
+                
+                <h4>Condition d'équilibre (optimum) du monopole</h4>
+                <p>Le monopole maximise son profit quand la recette marginale est égale au coût marginal :</p>
+                <div class="code-example">
+                    <pre><code>Rm(y) = Cm(y) ⇒ a - 2b·y = 2c·y ⇒ y* = a/(2b + 2c)</code></pre>
+                </div>
+                <p>Puis on déduit le prix d'équilibre :</p>
+                <div class="code-example">
+                    <pre><code>p* = a - b·y*</code></pre>
+                </div>
+                
+                <h4>3.4 Analyse des surplus et perte sèche</h4>
+                <p>Surplus du consommateur (SC) :</p>
+                <div class="code-example">
+                    <pre><code>SC = ∫<sub>0</sub><sup>y*</sup> p(y) dy - p*·y*</code></pre>
+                </div>
+                <p>Surplus du producteur (SP) :</p>
+                <div class="code-example">
+                    <pre><code>SP = R(y*) - C(y*)</code></pre>
+                </div>
+                <p>Profit :</p>
+                <div class="code-example">
+                    <pre><code>π = R(y*) - C(y*)</code></pre>
+                </div>
+                <p>Perte sèche (ou "charge morte") :</p>
+                <div class="code-example">
+                    <pre><code>Perte seche = (B + C) (aires sur le graphique)</code></pre>
+                </div>
+                
+                <h4>3.5 Discrimination par les prix</h4>
+                <p>Discrimination de 1er degré (parfaite) :</p>
+                <ul>
+                    <li>Le monopole connaît le prix de réserve de chaque client.</li>
+                    <li>Il vend chaque unité au prix maximum que le client est prêt à payer.</li>
+                    <li>Le surplus consommateur devient nul, le monopole capte tout le surplus.</li>
+                </ul>
+                <p>Discrimination de 3e degré (segmentée) :</p>
+                <ul>
+                    <li>Le marché est divisé en segments (jeunes/vieux, régions, etc.).</li>
+                    <li>Le monopole fixe un prix différent par segment en fonction de l'élasticité.</li>
+                    <li>Condition d'optimum :</li>
+                </ul>
+                <div class="code-example">
+                    <pre><code>Rm1(y1) = Rm2(y2) = ⋯ = Cm(y1 + y2 + …)</code></pre>
+                </div>
+            </section>
+            
+            <section id="section4">
+                <h3>Section 4 : Théorie des jeux et comportements stratégiques</h3>
+                
+                <h4>4.1 Contexte et objectifs</h4>
+                <p>•	En concurrence pure et parfaite (CPP), les firmes sont trop petites pour influencer le marché. Elles n'ont aucun comportement stratégique.</p>
+                <p>•	Lorsqu'il y a peu de firmes de taille importante, leurs décisions affectent l'équilibre de marché → on parle de concurrence imparfaite avec comportements stratégiques.</p>
+                
+                <h4>4.2 Définition de la théorie des jeux</h4>
+                <p>La théorie des jeux étudie les interactions stratégiques entre agents rationnels, lorsque le gain d'un dépend des choix des autres.</p>
+                <p>Un jeu est caractérisé par :</p>
+                <ul>
+                    <li>Les joueurs</li>
+                    <li>Les stratégies disponibles</li>
+                    <li>Les gains (ou pertes) associés à chaque combinaison de stratégies</li>
+                    <li>La règle du jeu : simultané ou séquentiel, information parfaite ou imparfaite</li>
+                </ul>
+                
+                <h4>4.3 Jeux simultanés vs jeux séquentiels</h4>
+                <p>•	Jeu simultané : les joueurs prennent leur décision en même temps, sans connaître le choix de l'autre.</p>
+                <p>•	Jeu séquentiel : les joueurs agissent l'un après l'autre, souvent avec information parfaite (le deuxième connaît la décision du premier).</p>
+                <p>•	Tout jeu peut être représenté :</p>
+                <ul>
+                    <li>en forme extensive (arbre de décision)</li>
+                    <li>en forme stratégique (matrice des gains)</li>
+                </ul>
+                
+                <h4>4.4 Dilemme du prisonnier</h4>
+                <p>Situation : Deux suspects sont arrêtés. Ils peuvent choisir :</p>
+                <ul>
+                    <li>Avouer (a)</li>
+                    <li>Nier (n)</li>
+                </ul>
+                <p>Peines :</p>
+                <div class="code-example">
+                    <pre><code>
++-------------------------------+---------------+---------------+
+|                               | C : Avouer (a) |  C : Nier (n)  |
++-------------------------------+---------------+---------------+
+| L : Avouer (a)                |    (3, 3)     |    (1, 4)     |
++-------------------------------+---------------+---------------+
+| L : Nier (n)                  |    (4, 1)     |    (2, 2)     |
++-------------------------------+---------------+---------------+</code></pre>
+                </div>
+                <p>Analyse :</p>
+                <ul>
+                    <li>Avouer est stratégie dominante pour chaque joueur.</li>
+                    <li>L'équilibre du jeu est (a, a) avec 3 ans de peine chacun.</li>
+                    <li>Ce n'est pas Pareto optimal : ils feraient mieux tous les deux en niant.</li>
+                </ul>
+                
+                <h4>4.5 Stratégie dominante et dominée</h4>
+                <p>•	Stratégie dominante : stratégie qui donne le meilleur résultat, quelle que soit l'action de l'autre joueur.</p>
+                <p>•	Stratégie dominée : stratégie moins bonne dans tous les cas. Elle peut être éliminée.</p>
+                <p>Un équilibre en stratégies dominantes existe si chaque joueur en possède une.</p>
+                
+                <h4>4.6 Exemple : publicité entre deux firmes</h4>
+                <p>Deux entreprises choisissent de faire ou non de la publicité :</p>
+                <div class="code-example">
+                    <pre><code>
++-------------------------------+---------------+---------------+
+|                               |  B : Publicité | B : Pas de pub |
++-------------------------------+---------------+---------------+
+| A : Publicité                 |    (3, 3)     |    (10, 0)    |
++-------------------------------+---------------+---------------+
+| A : Pas de pub                |    (0, 10)    |    (5, 5)     |
++-------------------------------+---------------+---------------+</code></pre>
+                </div>
+                <ul>
+                    <li>Publicité est une stratégie dominante pour A et B.</li>
+                    <li>L'équilibre est (pub, pub) = (3, 3) → sous-optimal (ils préféreraient (5, 5)).</li>
+                </ul>
+                
+                <h4>4.7 Équilibre de Nash</h4>
+                <p>Un équilibre de Nash est une situation où aucun joueur n'a intérêt à dévier unilatéralement de sa stratégie.</p>
+                <p>C'est une situation stable : chacun maximise son gain étant donné le choix de l'autre.</p>
+                
+                <h4>4.8 Résolution d'un jeu séquentiel : récursion à rebours</h4>
+                <p>•	On part de la fin du jeu pour déterminer le meilleur choix à chaque étape.</p>
+                <p>•	On élimine les actions non rationnelles en remontant l'arbre.</p>
+                <p>•	Cela mène à un équilibre de Nash en sous-jeux parfaits.</p>
+            </section>
+            
+            <section id="section5">
+                <h3>Section 5 : Oligopole et Duopole</h3>
+                
+                <h4>5.1 Définitions</h4>
+                <p>•	Oligopole : Marché avec un petit nombre de firmes (2 ou plus), chaque décision affecte significativement l'équilibre du marché.</p>
+                <p>•	Duopole : Cas particulier d'oligopole avec deux firmes seulement.</p>
+                <p>•	Produits souvent homogènes, parfois différenciés.</p>
+                
+                <h4>5.2 Hypothèses du modèle</h4>
+                <p>•	Produits identiques (homogènes).</p>
+                <p>•	Les entreprises choisissent leurs prix (Bertrand) ou leurs quantités (Cournot).</p>
+                <p>•	Les décisions peuvent être :</p>
+                <ul>
+                    <li>Non coordonnées (chacune maximise son profit individuellement)</li>
+                    <li>Coordonnées (entente, cartel, fusion...)</li>
+                </ul>
+                
+                <h4>I. Le modèle de Bertrand (choix du prix)</h4>
+                <p>Hypothèses :</p>
+                <ul>
+                    <li>Deux firmes identiques.</li>
+                    <li>Produisent à coût marginal constant :</li>
+                </ul>
+                <div class="code-example">
+                    <pre><code>C(y) = c·y</code></pre>
+                </div>
+                <p>•	Bien homogène → la firme la moins chère capte tout le marché.</p>
+                <p>Analyse des cas :</p>
+                <ul>
+                    <li>Si P1=P2, elles se partagent le marché.</li>
+                    <li>Si P1<P2, la firme 1 vend toute la demande.</li>
+                    <li>Si P1>P2, la firme 2 vend toute la demande.</li>
+                </ul>
+                <p>Résultat :</p>
+                <div class="code-example">
+                    <pre><code>En situation de concurrence non-coopérative, l'équilibre de Bertrand est :
+P1=P2=c</code></pre>
+                </div>
+                <p>➡️ Prix égal au coût marginal, profit nul</p>
+                <p>➡️ Situation identique à celle de la concurrence parfaite</p>
+                <p>💡 Même avec seulement 2 firmes, la concurrence par les prix peut suffire à annuler les profits.</p>
+                
+                <h4>II. Le modèle de Cournot (choix des quantités)</h4>
+                <p>Hypothèses :</p>
+                <ul>
+                    <li>Deux firmes produisent un bien homogène.</li>
+                    <li>Elles choisissent simultanément leur quantité à produire.</li>
+                    <li>Le prix de marché dépend de la quantité totale offerte :</li>
+                </ul>
+                <div class="code-example">
+                    <pre><code>p(y) = a - b(y1 + y2)</code></pre>
+                </div>
+                <p>•	Coût total de chaque firme :</p>
+                <div class="code-example">
+                    <pre><code>Ci(yi) = c·yi</code></pre>
+                </div>
+                <p>Profit de la firme i :</p>
+                <div class="code-example">
+                    <pre><code>πi = Ri - Ci = yi·p(y) - c·yi = yi·(a - b(y1 + y2)) - c·yi</code></pre>
+                </div>
+                
+                <h4>Fonction de réaction</h4>
+                <p>Chaque firme maximise son profit en tenant la quantité de l'autre comme donnée.</p>
+                <p>Exemple pour la firme 1 :</p>
+                <div class="code-example">
+                    <pre><code>dπ1/dy1 = a - 2by1 - by2 - c = 0 ⇒ y1 = (a - c - by2)/2b</code></pre>
+                </div>
+                <p>C'est la fonction de réaction de la firme 1. Idem pour la firme 2 :</p>
+                <div class="code-example">
+                    <pre><code>y2 = (a - c - by1)/2b</code></pre>
+                </div>
+                
+                <h4>Équilibre de Cournot (quantités optimales)</h4>
+                <p>En résolvant le système des deux fonctions de réaction, on obtient :</p>
+                <div class="code-example">
+                    <pre><code>y1* = y2* = (a - c)/3b</code></pre>
+                </div>
+                <p>Donc quantité totale :</p>
+                <div class="code-example">
+                    <pre><code>Y = y1 + y2 = 2(a - c)/3b</code></pre>
+                </div>
+                <p>Et prix d'équilibre :</p>
+                <div class="code-example">
+                    <pre><code>p* = a - bY = a - 2(a - c)/3 = (a + 2c)/3</code></pre>
+                </div>
+                <p>Chaque firme réalise un profit positif.</p>
+                
+                <h4>III. Comparaison des modèles</h4>
+                <p>Modèle	Variable stratégique	Résultat	Prix</p>
+                <div class="code-example">
+                    <pre><code>+----------------+---------------------+------------------------+--------------+
+| Modèle         | Variable stratégique | Résultat               | Prix         |
++----------------+---------------------+------------------------+--------------+
+| Bertrand       | Prix                | p* = c, profit = 0     | Bas          |
++----------------+---------------------+------------------------+--------------+
+| Cournot        | Quantité            | p* > c, profit > 0     | Plus élevé   |
++----------------+---------------------+------------------------+--------------+</code></pre>
+                </div>
+                
+                <h4>IV. Remarques sur les hypothèses</h4>
+                <p>•	Si les produits sont différenciés, l'équilibre de Bertrand n'est plus à prix = coût marginal → prix > c, profit > 0</p>
+                <p>•	Si les capacités de production sont limitées, la guerre des prix est atténuée → Bertrand ne conduit plus à concurrence parfaite.</p>
+            </section>
+            
+            <div class="navigation" style="margin-top: 2rem; text-align: center;">
+                <button onclick="window.location.href='index.html'" class="course-button">
+                    Retour à la page du cours
+                </button>
+            </div>
         </div>
     </div>
 </body>
