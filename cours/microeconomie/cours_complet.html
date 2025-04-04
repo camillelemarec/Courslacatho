@@ -7,6 +7,112 @@
     <link rel="stylesheet" href="../../styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3363694879891746" crossorigin="anonymous"></script>
     <script src="../../js/ads.js"></script>
+    <style>
+        /* Styles pour améliorer l'apparence des formules et tableaux */
+        .formula {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4B0082;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        
+        .formula code {
+            background: none;
+            padding: 0;
+            color: #333;
+        }
+        
+        .formula-title {
+            font-weight: bold;
+            color: #4B0082;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        
+        .math-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        .math-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .math-table th, .math-table td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        
+        .math-table th {
+            background-color: #e6e6fa;
+            color: #4B0082;
+            font-weight: bold;
+        }
+        
+        .math-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .matrix {
+            margin: 15px auto;
+            border-collapse: collapse;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .matrix th {
+            background-color: #e6e6fa;
+            color: #4B0082;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .matrix td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .matrix .header-cell {
+            background-color: #f0f0f7;
+            font-weight: bold;
+        }
+        
+        .note-box {
+            background-color: #f0f8ff;
+            border-left: 4px solid #4169E1;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Amélioration des balises pre existantes */
+        .code-example pre {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1em;
+            color: #333;
+            border-left: 4px solid #4B0082;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -67,6 +173,14 @@
                 </ul>
             </div>
             
+            <div class="quick-nav" style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; margin: 20px 0; text-align: center;">
+                <strong>Navigation rapide :</strong>
+                <a href="#section2" style="margin: 0 10px; color: #4B0082; text-decoration: none;">Concurrence parfaite</a> |
+                <a href="#section3" style="margin: 0 10px; color: #4B0082; text-decoration: none;">Monopole</a> |
+                <a href="#section4" style="margin: 0 10px; color: #4B0082; text-decoration: none;">Théorie des jeux</a> |
+                <a href="#section5" style="margin: 0 10px; color: #4B0082; text-decoration: none;">Oligopole</a>
+            </div>
+            
             <section id="section2">
                 <h3>Section 2 : La concurrence parfaite</h3>
                 
@@ -83,8 +197,9 @@
                 
                 <h4>2.2 La fonction d'offre individuelle à court terme</h4>
                 <p><strong>a) Objectif de la firme : maximiser son profit</strong></p>
-                <div class="code-example">
-                    <pre><code>π(y) = R(y) - C(y) = p·y - C(y)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Fonction de profit</div>
+                    <code>π(y) = R(y) - C(y) = p·y - C(y)</code>
                 </div>
                 <ul>
                     <li>y : quantité produite</li>
@@ -94,8 +209,9 @@
                 </ul>
                 
                 <p><strong>b) Condition de maximisation du profit</strong></p>
-                <div class="code-example">
-                    <pre><code>p = Cm(y)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Condition de premier ordre</div>
+                    <code>p = Cm(y)</code>
                 </div>
                 <ul>
                     <li>Cm(y) : coût marginal</li>
@@ -109,7 +225,9 @@
                     <li>Si p ≥ CVM(y) → la firme continue à produire</li>
                     <li>Si p < CVM(y) → la firme ferme (perte > coût fixe)</li>
                 </ul>
-                <p>Le seuil de fermeture p<sub>F</sub> est le minimum du coût variable moyen (CVM).</p>
+                <div class="note-box">
+                    <p>Le seuil de fermeture p<sub>F</sub> est le minimum du coût variable moyen (CVM).</p>
+                </div>
                 
                 <h4>2.4 Seuil de rentabilité</h4>
                 <ul>
@@ -127,8 +245,9 @@
                 </ul>
                 
                 <h4>2.6 Surplus du producteur</h4>
-                <div class="code-example">
-                    <pre><code>SP = RT - CV = p·y - CV(y)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Surplus du producteur</div>
+                    <code>SP = RT - CV = p·y - CV(y)</code>
                 </div>
                 <ul>
                     <li>C'est l'aire entre le prix de marché et la courbe de coût marginal.</li>
@@ -142,16 +261,17 @@
                     <li>Il n'y a plus de coûts fixes</li>
                 </ul>
                 <p>La firme reste sur le marché si :</p>
-                <div class="code-example">
-                    <pre><code>p ≥ CM<sub>LT</sub>(y)</code></pre>
+                <div class="formula">
+                    <code>p ≥ CM<sub>LT</sub>(y)</code>
                 </div>
                 <p>La fonction d'offre de long terme est aussi la courbe de coût marginal, mais au-dessus du coût moyen de long terme.</p>
                 
                 <h4>2.8 Équilibre du marché concurrentiel</h4>
                 <p><strong>a) Détermination du prix d'équilibre</strong></p>
                 <p>L'équilibre est atteint quand :</p>
-                <div class="code-example">
-                    <pre><code>O(p*) = D(p*)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Condition d'équilibre du marché</div>
+                    <code>O(p*) = D(p*)</code>
                 </div>
                 <ul>
                     <li>O(p) : offre agrégée (croissante)</li>
@@ -166,6 +286,7 @@
                     <li>La quantité produite correspond à celle où :<br>
                     Prix = Coût marginal = Disposition marginale à payer</li>
                 </ul>
+                <p style="text-align: right;"><a href="#" style="color: #4B0082; text-decoration: none; font-size: 0.9em;">↑ Retour en haut</a></p>
             </section>
             
             <section id="section3">
@@ -184,8 +305,9 @@
                 
                 <h4>3.3 Objectif du monopole et décision d'équilibre</h4>
                 <p>Objectif :</p>
-                <div class="code-example">
-                    <pre><code>π(y) = R(y) - C(y)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Profit du monopole</div>
+                    <code>π(y) = R(y) - C(y)</code>
                 </div>
                 <p>où :</p>
                 <ul>
@@ -195,8 +317,9 @@
                     <li>y = quantité produite</li>
                 </ul>
                 <p>Fonction de demande inverse :</p>
-                <div class="code-example">
-                    <pre><code>p(y) = a - b·y</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Demande inverse</div>
+                    <code>p(y) = a - b·y</code>
                 </div>
                 <p>où :</p>
                 <ul>
@@ -206,42 +329,79 @@
                 </ul>
                 
                 <h4>Formules essentielles du monopole</h4>
-                <div class="code-example">
-                    <pre><code>Formule              Expression               Signification
-Recette totale R(y)     y·p(y) = ay - by²         Chiffre d'affaires
-Recette moyenne RM(y)   R(y)/y = p(y) = a - by    Prix moyen
-Recette marginale Rm(y) dR(y)/dy = a - 2by        Variation de la recette
-Coût total C(y)         F + cy²                   Coût fixe + coût variable
-Coût marginal Cm(y)     dC(y)/dy = 2cy            Coût d'une unité supplémentaire
-Coût moyen CM(y)        C(y)/y = F/y + cy         Coût unitaire moyen</code></pre>
+                <div class="math-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Formule</th>
+                                <th>Expression</th>
+                                <th>Signification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Recette totale R(y)</td>
+                                <td>y·p(y) = ay - by²</td>
+                                <td>Chiffre d'affaires</td>
+                            </tr>
+                            <tr>
+                                <td>Recette moyenne RM(y)</td>
+                                <td>R(y)/y = p(y) = a - by</td>
+                                <td>Prix moyen</td>
+                            </tr>
+                            <tr>
+                                <td>Recette marginale Rm(y)</td>
+                                <td>dR(y)/dy = a - 2by</td>
+                                <td>Variation de la recette</td>
+                            </tr>
+                            <tr>
+                                <td>Coût total C(y)</td>
+                                <td>F + cy²</td>
+                                <td>Coût fixe + coût variable</td>
+                            </tr>
+                            <tr>
+                                <td>Coût marginal Cm(y)</td>
+                                <td>dC(y)/dy = 2cy</td>
+                                <td>Coût d'une unité supplémentaire</td>
+                            </tr>
+                            <tr>
+                                <td>Coût moyen CM(y)</td>
+                                <td>C(y)/y = F/y + cy</td>
+                                <td>Coût unitaire moyen</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 
                 <h4>Condition d'équilibre (optimum) du monopole</h4>
-                <p>Le monopole maximise son profit quand la recette marginale est égale au coût marginal :</p>
-                <div class="code-example">
-                    <pre><code>Rm(y) = Cm(y) ⇒ a - 2b·y = 2c·y ⇒ y* = a/(2b + 2c)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Égalité Recette marginale - Coût marginal</div>
+                    <code>Rm(y) = Cm(y) ⇒ a - 2b·y = 2c·y ⇒ y* = a/(2b + 2c)</code>
                 </div>
                 <p>Puis on déduit le prix d'équilibre :</p>
-                <div class="code-example">
-                    <pre><code>p* = a - b·y*</code></pre>
+                <div class="formula">
+                    <code>p* = a - b·y*</code>
                 </div>
                 
                 <h4>3.4 Analyse des surplus et perte sèche</h4>
                 <p>Surplus du consommateur (SC) :</p>
-                <div class="code-example">
-                    <pre><code>SC = ∫<sub>0</sub><sup>y*</sup> p(y) dy - p*·y*</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Surplus du consommateur</div>
+                    <code>SC = ∫<sub>0</sub><sup>y*</sup> p(y) dy - p*·y*</code>
                 </div>
                 <p>Surplus du producteur (SP) :</p>
-                <div class="code-example">
-                    <pre><code>SP = R(y*) - C(y*)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Surplus du producteur</div>
+                    <code>SP = R(y*) - C(y*)</code>
                 </div>
                 <p>Profit :</p>
-                <div class="code-example">
-                    <pre><code>π = R(y*) - C(y*)</code></pre>
+                <div class="formula">
+                    <code>π = R(y*) - C(y*)</code>
                 </div>
                 <p>Perte sèche (ou "charge morte") :</p>
-                <div class="code-example">
-                    <pre><code>Perte seche = (B + C) (aires sur le graphique)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Perte de bien-être social</div>
+                    <code>Perte sèche = (B + C) (aires sur le graphique)</code>
                 </div>
                 
                 <h4>3.5 Discrimination par les prix</h4>
@@ -257,9 +417,11 @@ Coût moyen CM(y)        C(y)/y = F/y + cy         Coût unitaire moyen</code></
                     <li>Le monopole fixe un prix différent par segment en fonction de l'élasticité.</li>
                     <li>Condition d'optimum :</li>
                 </ul>
-                <div class="code-example">
-                    <pre><code>Rm1(y1) = Rm2(y2) = ⋯ = Cm(y1 + y2 + …)</code></pre>
+                <div class="formula">
+                    <div class="formula-title">Condition d'optimisation avec discrimination</div>
+                    <code>Rm<sub>1</sub>(y<sub>1</sub>) = Rm<sub>2</sub>(y<sub>2</sub>) = ⋯ = Cm(y<sub>1</sub> + y<sub>2</sub> + …)</code>
                 </div>
+                <p style="text-align: right;"><a href="#" style="color: #4B0082; text-decoration: none; font-size: 0.9em;">↑ Retour en haut</a></p>
             </section>
             
             <section id="section4">
@@ -295,15 +457,24 @@ Coût moyen CM(y)        C(y)/y = F/y + cy         Coût unitaire moyen</code></
                     <li>Nier (n)</li>
                 </ul>
                 <p>Peines :</p>
-                <div class="code-example">
-                    <pre><code>
-+-------------------------------+---------------+---------------+
-|                               | C : Avouer (a) |  C : Nier (n)  |
-+-------------------------------+---------------+---------------+
-| L : Avouer (a)                |    (3, 3)     |    (1, 4)     |
-+-------------------------------+---------------+---------------+
-| L : Nier (n)                  |    (4, 1)     |    (2, 2)     |
-+-------------------------------+---------------+---------------+</code></pre>
+                <div class="matrix">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>C : Avouer (a)</th>
+                            <th>C : Nier (n)</th>
+                        </tr>
+                        <tr>
+                            <td class="header-cell">L : Avouer (a)</td>
+                            <td>(3, 3)</td>
+                            <td>(1, 4)</td>
+                        </tr>
+                        <tr>
+                            <td class="header-cell">L : Nier (n)</td>
+                            <td>(4, 1)</td>
+                            <td>(2, 2)</td>
+                        </tr>
+                    </table>
                 </div>
                 <p>Analyse :</p>
                 <ul>
@@ -319,15 +490,24 @@ Coût moyen CM(y)        C(y)/y = F/y + cy         Coût unitaire moyen</code></
                 
                 <h4>4.6 Exemple : publicité entre deux firmes</h4>
                 <p>Deux entreprises choisissent de faire ou non de la publicité :</p>
-                <div class="code-example">
-                    <pre><code>
-+-------------------------------+---------------+---------------+
-|                               |  B : Publicité | B : Pas de pub |
-+-------------------------------+---------------+---------------+
-| A : Publicité                 |    (3, 3)     |    (10, 0)    |
-+-------------------------------+---------------+---------------+
-| A : Pas de pub                |    (0, 10)    |    (5, 5)     |
-+-------------------------------+---------------+---------------+</code></pre>
+                <div class="matrix">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>B : Publicité</th>
+                            <th>B : Pas de pub</th>
+                        </tr>
+                        <tr>
+                            <td class="header-cell">A : Publicité</td>
+                            <td>(3, 3)</td>
+                            <td>(10, 0)</td>
+                        </tr>
+                        <tr>
+                            <td class="header-cell">A : Pas de pub</td>
+                            <td>(0, 10)</td>
+                            <td>(5, 5)</td>
+                        </tr>
+                    </table>
                 </div>
                 <ul>
                     <li>Publicité est une stratégie dominante pour A et B.</li>
@@ -342,6 +522,7 @@ Coût moyen CM(y)        C(y)/y = F/y + cy         Coût unitaire moyen</code></
                 <p>•	On part de la fin du jeu pour déterminer le meilleur choix à chaque étape.</p>
                 <p>•	On élimine les actions non rationnelles en remontant l'arbre.</p>
                 <p>•	Cela mène à un équilibre de Nash en sous-jeux parfaits.</p>
+                <p style="text-align: right;"><a href="#" style="color: #4B0082; text-decoration: none; font-size: 0.9em;">↑ Retour en haut</a></p>
             </section>
             
             <section id="section5">
@@ -393,59 +574,78 @@ P1=P2=c</code></pre>
                     <li>Elles choisissent simultanément leur quantité à produire.</li>
                     <li>Le prix de marché dépend de la quantité totale offerte :</li>
                 </ul>
-                <div class="code-example">
-                    <pre><code>p(y) = a - b(y1 + y2)</code></pre>
+                <div class="formula">
+                    <code>p(y) = a - b(y<sub>1</sub> + y<sub>2</sub>)</code>
                 </div>
                 <p>•	Coût total de chaque firme :</p>
-                <div class="code-example">
-                    <pre><code>Ci(yi) = c·yi</code></pre>
+                <div class="formula">
+                    <code>C<sub>i</sub>(y<sub>i</sub>) = c·y<sub>i</sub></code>
                 </div>
                 <p>Profit de la firme i :</p>
-                <div class="code-example">
-                    <pre><code>πi = Ri - Ci = yi·p(y) - c·yi = yi·(a - b(y1 + y2)) - c·yi</code></pre>
+                <div class="formula">
+                    <code>π<sub>i</sub> = R<sub>i</sub> - C<sub>i</sub> = y<sub>i</sub>·p(y) - c·y<sub>i</sub> = y<sub>i</sub>·(a - b(y<sub>1</sub> + y<sub>2</sub>)) - c·y<sub>i</sub></code>
                 </div>
                 
                 <h4>Fonction de réaction</h4>
                 <p>Chaque firme maximise son profit en tenant la quantité de l'autre comme donnée.</p>
                 <p>Exemple pour la firme 1 :</p>
-                <div class="code-example">
-                    <pre><code>dπ1/dy1 = a - 2by1 - by2 - c = 0 ⇒ y1 = (a - c - by2)/2b</code></pre>
+                <div class="formula">
+                    <code>dπ<sub>1</sub>/dy<sub>1</sub> = a - 2by<sub>1</sub> - by<sub>2</sub> - c = 0 ⇒ y<sub>1</sub> = (a - c - by<sub>2</sub>)/2b</code>
                 </div>
                 <p>C'est la fonction de réaction de la firme 1. Idem pour la firme 2 :</p>
-                <div class="code-example">
-                    <pre><code>y2 = (a - c - by1)/2b</code></pre>
+                <div class="formula">
+                    <code>y<sub>2</sub> = (a - c - by<sub>1</sub>)/2b</code>
                 </div>
                 
                 <h4>Équilibre de Cournot (quantités optimales)</h4>
                 <p>En résolvant le système des deux fonctions de réaction, on obtient :</p>
-                <div class="code-example">
-                    <pre><code>y1* = y2* = (a - c)/3b</code></pre>
+                <div class="formula">
+                    <code>y<sub>1</sub>* = y<sub>2</sub>* = (a - c)/3b</code>
                 </div>
                 <p>Donc quantité totale :</p>
-                <div class="code-example">
-                    <pre><code>Y = y1 + y2 = 2(a - c)/3b</code></pre>
+                <div class="formula">
+                    <code>Y = y<sub>1</sub> + y<sub>2</sub> = 2(a - c)/3b</code>
                 </div>
                 <p>Et prix d'équilibre :</p>
-                <div class="code-example">
-                    <pre><code>p* = a - bY = a - 2(a - c)/3 = (a + 2c)/3</code></pre>
+                <div class="formula">
+                    <code>p* = a - bY = a - 2(a - c)/3 = (a + 2c)/3</code>
                 </div>
-                <p>Chaque firme réalise un profit positif.</p>
+                <div class="note-box">
+                    <p><strong>Remarque :</strong> Chaque firme réalise un profit positif, contrairement au modèle de Bertrand.</p>
+                </div>
                 
                 <h4>III. Comparaison des modèles</h4>
-                <p>Modèle	Variable stratégique	Résultat	Prix</p>
-                <div class="code-example">
-                    <pre><code>+----------------+---------------------+------------------------+--------------+
-| Modèle         | Variable stratégique | Résultat               | Prix         |
-+----------------+---------------------+------------------------+--------------+
-| Bertrand       | Prix                | p* = c, profit = 0     | Bas          |
-+----------------+---------------------+------------------------+--------------+
-| Cournot        | Quantité            | p* > c, profit > 0     | Plus élevé   |
-+----------------+---------------------+------------------------+--------------+</code></pre>
+                <div class="math-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modèle</th>
+                                <th>Variable stratégique</th>
+                                <th>Résultat</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bertrand</td>
+                                <td>Prix</td>
+                                <td>p* = c, profit = 0</td>
+                                <td>Bas</td>
+                            </tr>
+                            <tr>
+                                <td>Cournot</td>
+                                <td>Quantité</td>
+                                <td>p* > c, profit > 0</td>
+                                <td>Plus élevé</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 
                 <h4>IV. Remarques sur les hypothèses</h4>
                 <p>•	Si les produits sont différenciés, l'équilibre de Bertrand n'est plus à prix = coût marginal → prix > c, profit > 0</p>
                 <p>•	Si les capacités de production sont limitées, la guerre des prix est atténuée → Bertrand ne conduit plus à concurrence parfaite.</p>
+                <p style="text-align: right;"><a href="#" style="color: #4B0082; text-decoration: none; font-size: 0.9em;">↑ Retour en haut</a></p>
             </section>
             
             <div class="navigation" style="margin-top: 2rem; text-align: center;">
